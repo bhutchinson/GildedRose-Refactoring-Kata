@@ -1,4 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.items;
+
+import com.gildedrose.Item;
 
 public abstract class AbstractItem extends Item {
 
@@ -10,7 +12,7 @@ public abstract class AbstractItem extends Item {
         sellIn = sellIn - 1;
     }
 
-    abstract void adjustQuality();
+    public abstract void adjustQuality();
 
     public void adjustQuantityIfPastSellByDate() {
         if (pastSellByDate()) {
