@@ -78,17 +78,16 @@ public class GildedRoseTest {
 
     @Test
     public void sulfuras() {
-        // TODO - what about case where we pass something less than 80 in as quality?
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 2, 80) };
+        Item[] items = new Item[] { new SulfurusItem("Sulfuras, Hand of Ragnaros", 2, 40) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("Sulfuras, Hand of Ragnaros", item.name);
-        verifyItemSellInAndQuality(2, 80, item);
+        verifyItemSellInAndQuality(0, 80, item);
 
         app.updateQuality();
-        verifyItemSellInAndQuality(2, 80, item);
+        verifyItemSellInAndQuality(0, 80, item);
         app.updateQuality();
-        verifyItemSellInAndQuality(2, 80, item);
+        verifyItemSellInAndQuality(0, 80, item);
     }
 
     @Test

@@ -23,6 +23,10 @@ class GildedRose {
                 ((BackstagePassItem)item).decrementSellIn();
                 ((BackstagePassItem)item).adjustQuality();
                 ((BackstagePassItem)item).adjustQuantityIfPastSellByDate();
+            } else if (item instanceof SulfurusItem) {
+                ((SulfurusItem)item).decrementSellIn();
+                ((SulfurusItem)item).adjustQuality();
+                ((SulfurusItem)item).adjustQuantityIfPastSellByDate();
             } else {
                 decrementSellIn(item);
                 adjustQuality(item);
