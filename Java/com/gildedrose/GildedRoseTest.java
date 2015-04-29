@@ -166,7 +166,7 @@ public class GildedRoseTest {
         app.updateQuality();
         verifyItemSellInAndQuality(-2, 0, item);
     }
-
+    
     private void verifyItemSellInAndQuality(int expectedSellIn, int expectedQuality, Item item) {
         assertEquals("SellIn wasn't what we expected ", expectedSellIn, item.sellIn);
         assertEquals("Quality wasn't what we expected ", expectedQuality, item.quality);
