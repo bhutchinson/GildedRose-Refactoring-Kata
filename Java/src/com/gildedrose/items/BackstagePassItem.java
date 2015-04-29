@@ -13,15 +13,9 @@ public class BackstagePassItem extends AbstractItem {
     }
 
     @Override
-    public void adjustQuantityIfPastSellByDate() {
+    public void adjustQualityIfPastSellByDate() {
         if (pastSellByDate()) {
             quality = 0;
-        }
-    }
-
-    private void incrementQuality() {
-        if (quality < 50) {
-            quality = quality + 1;
         }
     }
 

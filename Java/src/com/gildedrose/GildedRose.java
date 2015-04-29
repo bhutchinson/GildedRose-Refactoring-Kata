@@ -24,7 +24,7 @@ class GildedRose {
     private void updateItem(AbstractItem item) {
         item.decrementSellIn();
         item.adjustQuality();
-        item.adjustQuantityIfPastSellByDate();
+        item.adjustQualityIfPastSellByDate();
     }
 
 }

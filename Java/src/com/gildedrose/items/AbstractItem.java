@@ -14,7 +14,7 @@ public abstract class AbstractItem extends Item {
 
     public abstract void adjustQuality();
 
-    public void adjustQuantityIfPastSellByDate() {
+    public void adjustQualityIfPastSellByDate() {
         if (pastSellByDate()) {
            adjustQuality();
         }
@@ -22,5 +22,11 @@ public abstract class AbstractItem extends Item {
 
     protected boolean pastSellByDate() {
         return sellIn < 0;
+    }
+
+    protected void incrementQuality() {
+        if (quality < 50) {
+            quality = quality + 1;
+        }
     }
 }

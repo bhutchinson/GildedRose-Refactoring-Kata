@@ -11,10 +11,4 @@ public class AgedBrieItem extends AbstractItem {
         incrementQuality();
     }
 
-    private void incrementQuality() {
-        if (quality < 50) {
-            quality = quality + 1;
-        }
-    }
-
 }
