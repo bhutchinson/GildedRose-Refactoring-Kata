@@ -166,10 +166,9 @@ public class GildedRoseTest {
         verifyItemSellInAndQuality(-2, 0, item);
     }
 
-    //"Conjured" items degrade in Quality twice as fast as normal items
     @Test
     public void conjuredItem() {
-        Item[] items = new Item[] { new Item("Conjured foo", 2, 10) };
+        Item[] items = new Item[] { new ConjuredItem("foo", 2, 10) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("Conjured foo", item.name);

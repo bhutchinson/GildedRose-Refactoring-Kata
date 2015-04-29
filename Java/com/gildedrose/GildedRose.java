@@ -27,6 +27,10 @@ class GildedRose {
                 ((SulfurusItem)item).decrementSellIn();
                 ((SulfurusItem)item).adjustQuality();
                 ((SulfurusItem)item).adjustQuantityIfPastSellByDate();
+            } else if (item instanceof ConjuredItem) {
+                ((ConjuredItem)item).decrementSellIn();
+                ((ConjuredItem)item).adjustQuality();
+                ((ConjuredItem)item).adjustQuantityIfPastSellByDate();
             } else {
                 decrementSellIn(item);
                 adjustQuality(item);
