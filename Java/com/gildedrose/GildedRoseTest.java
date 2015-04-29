@@ -16,7 +16,7 @@ public class GildedRoseTest {
 
     @Test
     public void normalItem() {
-        Item[] items = new Item[] { new Item("foo", 2, 10) };
+        Item[] items = new Item[] { new NormalItem("foo", 2, 10) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("foo", item.name);
