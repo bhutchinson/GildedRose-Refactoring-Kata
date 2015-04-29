@@ -186,6 +186,26 @@ public class GildedRoseTest {
         verifyItemSellInAndQuality(-3, 0, item);
     }
 
+    @Test
+    public void conjuredItem2() {
+        Item[] items = new Item[] { new ConjuredItem("foo", 2, 11) };
+        GildedRose app = new GildedRose(items);
+        Item item = app.items[0];
+        assertEquals("Conjured foo", item.name);
+        verifyItemSellInAndQuality(2, 11, item);
+
+        app.updateQuality();
+        verifyItemSellInAndQuality(1, 9, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(0, 7, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(-1, 3, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(-2, 0, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(-3, 0, item);
+    }
+
     private void verifyItemSellInAndQuality(int expectedSellIn, int expectedQuality, Item item) {
         assertEquals("SellIn wasn't what we expected ", expectedSellIn, item.sellIn);
         assertEquals("Quality wasn't what we expected ", expectedQuality, item.quality);
