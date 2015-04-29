@@ -166,7 +166,28 @@ public class GildedRoseTest {
         app.updateQuality();
         verifyItemSellInAndQuality(-2, 0, item);
     }
-    
+
+    //"Conjured" items degrade in Quality twice as fast as normal items
+    @Test
+    public void conjuredItem() {
+        Item[] items = new Item[] { new Item("Conjured foo", 2, 10) };
+        GildedRose app = new GildedRose(items);
+        Item item = app.items[0];
+        assertEquals("Conjured foo", item.name);
+        verifyItemSellInAndQuality(2, 10, item);
+
+        app.updateQuality();
+        verifyItemSellInAndQuality(1, 8, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(0, 6, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(-1, 2, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(-2, 0, item);
+        app.updateQuality();
+        verifyItemSellInAndQuality(-3, 0, item);
+    }
+
     private void verifyItemSellInAndQuality(int expectedSellIn, int expectedQuality, Item item) {
         assertEquals("SellIn wasn't what we expected ", expectedSellIn, item.sellIn);
         assertEquals("Quality wasn't what we expected ", expectedQuality, item.quality);
