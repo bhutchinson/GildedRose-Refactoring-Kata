@@ -42,7 +42,7 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrie() {
-        Item[] items = new Item[] { new Item("Aged Brie", 2, 46) };
+        Item[] items = new Item[] { new AgedBrieItem("Aged Brie", 2, 46) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("Aged Brie", item.name);
@@ -60,7 +60,7 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrie2() {
-        Item[] items = new Item[] { new Item("Aged Brie", 2, 47) };
+        Item[] items = new Item[] { new AgedBrieItem("Aged Brie", 2, 47) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("Aged Brie", item.name);
@@ -93,7 +93,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstagePasses() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 12, 10) };
+        Item[] items = new Item[] { new BackstagePassItem("Backstage passes to a TAFKAL80ETC concert", 12, 10) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);
@@ -131,7 +131,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstagePasses2() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 12, 30) };
+        Item[] items = new Item[] { new BackstagePassItem("Backstage passes to a TAFKAL80ETC concert", 12, 30) };
         GildedRose app = new GildedRose(items);
         Item item = app.items[0];
         assertEquals("Backstage passes to a TAFKAL80ETC concert", item.name);

@@ -12,9 +12,17 @@ class GildedRose {
             final Item item = items[i];
 
             if (item instanceof NormalItem) {
-                ((NormalItem)item).decrementSellIn();
-                ((NormalItem)item).adjustQuality();
-                ((NormalItem)item).adjustQuantityIfPastSellByDate();
+                ((NormalItem) item).decrementSellIn();
+                ((NormalItem) item).adjustQuality();
+                ((NormalItem) item).adjustQuantityIfPastSellByDate();
+            } else if (item instanceof AgedBrieItem) {
+                ((AgedBrieItem)item).decrementSellIn();
+                ((AgedBrieItem)item).adjustQuality();
+                ((AgedBrieItem)item).adjustQuantityIfPastSellByDate();
+            } else if (item instanceof BackstagePassItem) {
+                ((BackstagePassItem)item).decrementSellIn();
+                ((BackstagePassItem)item).adjustQuality();
+                ((BackstagePassItem)item).adjustQuantityIfPastSellByDate();
             } else {
                 decrementSellIn(item);
                 adjustQuality(item);
