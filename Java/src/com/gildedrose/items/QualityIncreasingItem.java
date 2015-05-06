@@ -1,8 +1,8 @@
 package com.gildedrose.items;
 
-public class AgedBrieItem extends AbstractItem {
+public class QualityIncreasingItem extends AbstractItem {
 
-    public AgedBrieItem(String name, int sellIn, int quality) {
+    public QualityIncreasingItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
@@ -10,5 +10,4 @@ public class AgedBrieItem extends AbstractItem {
     public void adjustQuality() {
         incrementQuality();
     }
-
 }

@@ -1,6 +1,6 @@
 package com.gildedrose.items;
 
-public class BackstagePassItem extends AbstractItem {
+public class BackstagePassItem extends QualityIncreasingItem {
 
     public BackstagePassItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -8,26 +8,27 @@ public class BackstagePassItem extends AbstractItem {
 
     @Override
     public void adjustQuality() {
-        incrementQuality();
+        super.incrementQuality();
         incrementBackstagePassQuality();
     }
 
     @Override
     public void adjustQualityIfPastSellByDate() {
         if (pastSellByDate()) {
-            quality = 0;
+            quality = MIN_QUALITY;
         }
     }
 
     private void incrementBackstagePassQuality() {
-        if (quality < 50) {
-            if (sellIn < 10) {
-                incrementQuality();
-            }
+        if (quality < MAX_QUALITY) {
+            incrementQualityIfNecessary(10);
+            incrementQualityIfNecessary(5);
+        }
+    }
 
-            if (sellIn < 5) {
-                incrementQuality();
-            }
+    private void incrementQualityIfNecessary(int days) {
+        if (sellIn < days) {
+            incrementQuality();
         }
     }
 
